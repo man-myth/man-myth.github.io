@@ -1,0 +1,183 @@
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+html {
+    height: 100%;
+    background-image: linear-gradient(to right top, #8e44ad 0%, #3498db 100%);
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('https://images.unsplash.com/photo-1605283231390-7727a6ca3b62');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 50px 0;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: normal;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+section {
+    max-width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#projects{
+    display: flex;
+    flex-direction: column;
+}
+h3 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Top nav bar */
+/* @import url(https://fonts.googleapis.com/css?family=Open+Sans); */
+
+
+nav.topbar {
+    max-width: 960px;
+    mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+    margin: 0 auto;
+    padding: 60px 0;
+    position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+nav.topbar ul {
+    text-align: center;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+nav.topbar ul li {
+    display: inline-block;
+}
+
+.topbar ul li a {
+    padding: 18px;
+    font-family: "Open Sans";
+    text-transform: uppercase;
+    color: rgba(0, 35, 122, 0.5);
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+}
+
+.topbar ul li a:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(0, 35, 122, 0.7);
+}
+
+
+/* end of top nav bar */
+
+
+/* For social Icons */
+.social {
+    position: fixed;
+    top: 30%;
+}
+
+.social ul {
+    list-style-type: none;
+    padding: 0;
+    transform: translatex(-270px);
+}
+
+.social ul li {
+    display: block;
+    margin: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 300px;
+    text-align: right;
+    padding: 10px;
+    border-radius: 0 30px 30px 0;
+    transition: all 1s;
+}
+
+.social ul li:hover {
+    transform: translatex(110px);
+}
+
+.social ul li.twitter:hover {
+    background-color: #55acee;
+}
+
+.social ul li.facebook:hover {
+    background-color: #3b5999;
+}
+
+.social ul li.google-plus:hover {
+    background-color: #dd4b39;
+}
+
+.social ul li.instagram:hover {
+    background-color: #e4405f;
+}
+
+.social ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.social ul li i {
+    text-align: center;
+    margin-left: 14px;
+    color: black;
+    background-color: white;
+    padding: 10px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    transform: rotate(0deg);
+}
+
+.social ul li:hover i {
+    transform: rotate(360deg);
+    transition: all 1s;
+}
+
+/* end of social icons css */
