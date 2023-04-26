@@ -15,10 +15,10 @@
     <nav class="topbar">
         <ul>
             <li>
-                <a href="#">Home</a>
+                <a href="#home">Home</a>
             </li>
             <li>
-                <a href="#">About</a>
+                <a href="#about">About</a>
             </li>
             <li>
                 <a href="#projects">Projects</a>
@@ -30,40 +30,48 @@
     </nav>
     <section id="home">
         <header>
-            <h1>Manmeet Singh</h1>
-            <h2>Computer Science Student</h2>
+            <h1>Hi, I'm <a style="font-family: Blanka">Manmeet</a></h1>
         </header>
+        <div class="subheading-container">
+            <p class="subheading-text">A </p>
+            <ul class="subheading-list">
+                <li class="subheading-list-item">Student</li>
+                <li class="subheading-list-item">Researcher</li>
+                <li class="subheading-list-item">Programmer</li>
+                <li class="subheading-list-item">Lifter</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section id="about">
+        <div class="about-me">
+            <div class="portrait">
+                <img src="public\portrait.jpg" alt="portrait">
+            </div>
+            <div class="text">
+                <p>I'm Manmeet Singh, a computer science student who is passionate, optimistic, and constantly looking to learn and grow. As a third-year student at Saint Louis University, I've gained experience in software development, research, and team collaboration.
+                    With technical skills in Java, C++, Python, HTML, CSS, and JavaScript, and proficiency in SQL and various development tools, I'm always eager to explore new technologies and push myself to learn more.</p>
+            </div>
+        </div>
     </section>
 
 
-    <nav class="social">
-        <ul>
-            <li class="twitter"><a href="https://codepen.io/collection/XdWJOQ/">Twitter<i class="fa fa-twitter"
-                        aria-hidden="true"></i></a></li>
-            <li class="facebook"><a href="https://codepen.io/collection/XdWJOQ/">Facebook<i class="fa fa-facebook"
-                        aria-hidden="true"></i></a></li>
-            <li class="google-plus"><a href="https://codepen.io/collection/XdWJOQ/">Google plus<i
-                        class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-            <li class="instagram"><a href="https://codepen.io/collection/XdWJOQ/">Instagram<i class="fa fa-instagram"
-                        aria-hidden="true"></i></a></li>
-        </ul>
-    </nav>
-
     <section id="projects">
-        <h3>Portfolio</h3>
+        <h3>Projects</h3>
         <div>
             <div class="project">
-                <img src="https://via.placeholder.com/300x200" alt="Project 1">
+                <img src="" alt="Project 1">
                 <h4>Online Quiz App</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod eu mauris sed bibendum.</p>
             </div>
             <div class="project">
-                <img src="https://via.placeholder.com/300x200" alt="Project 2">
+                <img src="" alt="Project 2">
                 <h4>Google To-Do List Replica</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod eu mauris sed bibendum.</p>
             </div>
             <div class="project">
-                <img src="https://via.placeholder.com/300x200" alt="Project 3">
+                <img src="" alt="Project 3">
                 <h4>Citizen Monitoring Applicaiton</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod eu mauris sed bibendum.</p>
             </div>
@@ -84,7 +92,9 @@
         </form>
     </section>
 
-    <script type="module" src="/main.js"></script>
+    <!-- <script type="module" src="/main.js" defer></script> -->
+    <script type="module" src="/script.js" defer></script>
+    <script type="module" src="/animation.js" defer></script>
 </body>
 
 </html>
