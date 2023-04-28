@@ -7,6 +7,7 @@
     <title>Manmeet Singh Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -30,7 +31,7 @@
     </nav>
     <section id="home">
         <header>
-            <h1>Hi, I'm <a style="font-family: Blanka">Manmeet</a></h1>
+            <a>Hi, I'm &nbsp;<h1 style="display: inline;">Manmeet</h1></a>
         </header>
         <div class="subheading-container">
             <p class="subheading-text">A </p>
@@ -46,36 +47,44 @@
 
     <section id="about">
         <div class="about-me">
-            <div class="portrait">
-                <img src="public\portrait.jpg" alt="portrait">
-            </div>
+            <div class="portrait"> </div>
             <div class="text">
-                <p>I'm Manmeet Singh, a computer science student who is passionate, optimistic, and constantly looking to learn and grow. As a third-year student at Saint Louis University, I've gained experience in software development, research, and team collaboration.
-                    With technical skills in Java, C++, Python, HTML, CSS, and JavaScript, and proficiency in SQL and various development tools, I'm always eager to explore new technologies and push myself to learn more.</p>
+                <h1 >About Me</h1>
+                <p>I'm Manmeet Singh, a computer science student who is passionate, optimistic, and constantly looking
+                    to learn and grow. As a third-year student at Saint Louis University, I've gained experience in
+                    software development, research, and team collaboration.</p>
+                <br>
+                <p> With technical skills in Java, C++, Python, HTML, CSS, and JavaScript, and proficiency in SQL and
+                    various development tools, I'm always eager to explore new technologies and push myself to learn
+                    more.</p>
             </div>
         </div>
     </section>
 
 
     <section id="projects">
-        <h3>Projects</h3>
-        <div>
-            <div class="project">
-                <img src="" alt="Project 1">
-                <h4>Online Quiz App</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod eu mauris sed bibendum.</p>
+        <h1>Projects</h1>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a>project 1</a>
+                </div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide">Slide 5</div>
+                <div class="swiper-slide">Slide 6</div>
+                <div class="swiper-slide">Slide 7</div>
+                <div class="swiper-slide">Slide 8</div>
+                <div class="swiper-slide">Slide 9</div>
             </div>
-            <div class="project">
-                <img src="" alt="Project 2">
-                <h4>Google To-Do List Replica</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod eu mauris sed bibendum.</p>
-            </div>
-            <div class="project">
-                <img src="" alt="Project 3">
-                <h4>Citizen Monitoring Applicaiton</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod eu mauris sed bibendum.</p>
-            </div>
+            <div class="swiper-pagination"></div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
         </div>
+
 
     </section>
 
@@ -93,8 +102,9 @@
     </section>
 
     <!-- <script type="module" src="/main.js" defer></script> -->
+
     <script type="module" src="/script.js" defer></script>
-    <script type="module" src="/animation.js" defer></script>
+    <!-- <script type="module" src="/animation.js" defer></script> -->
 </body>
 
 </html>
