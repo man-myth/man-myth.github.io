@@ -2,6 +2,7 @@ import './style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import * as $ from 'jquery'
+import Swiper, { Autoplay, Navigation, Pagination } from 'swiper';
 //nav bar
 $(document).ready(function () {
     $(window).bind('scroll', function () {
@@ -14,6 +15,39 @@ $(document).ready(function () {
         }
     });
 });
+
+
+//projects
+var swiper = new Swiper(".mySwiper", {
+    modules: [Navigation, Pagination, Autoplay],
+    speed: 500,
+    slidesPerView: 3,
+    spaceBetween: 30,
+    freeMode: true,
+    grabCursor: true,
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+
+    // autoplay: {
+    //     delay: 2500,
+    //     disableOnInteraction: false,
+    // },
+
+
+
+});
+
+
 
 let camera
 let scene
