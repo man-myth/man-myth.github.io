@@ -1,17 +1,17 @@
 import './style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import * as $ from 'jquery'
+import * as JQ from 'jquery'
 import Swiper, { Autoplay, Navigation, Pagination } from 'swiper';
 //nav bar
-$(document).ready(function () {
-    $(window).bind('scroll', function () {
-        var navHeight = $(window).height() - 70;
-        if ($(window).scrollTop() > navHeight) {
-            $('nav').addClass('fixed');
+JQ(document).ready(function () {
+    JQ(window).bind('scroll', function () {
+        var navHeight = JQ(window).height() - 70;
+        if (JQ(window).scrollTop() > navHeight) {
+            JQ('nav').addClass('fixed');
         }
         else {
-            $('nav').removeClass('fixed');
+            JQ('nav').removeClass('fixed');
         }
     });
 });
