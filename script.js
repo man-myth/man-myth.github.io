@@ -4,16 +4,14 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import * as $ from 'jquery'
 import Swiper, { Autoplay, Navigation, Pagination } from 'swiper';
 //nav bar
-$(function () {
-    $(window).bind('scroll', function () {
-        var navHeight = $(window).height() - 70;
-        if ($(window).scrollTop() > navHeight) {
-            $('nav').addClass('fixed');
-        }
-        else {
-            $('nav').removeClass('fixed');
-        }
-    });
+$(window).bind('scroll', function () {
+    var navHeight = $(window).height() - 70;
+    if ($(window).scrollTop() > navHeight) {
+        $('nav').addClass('fixed');
+    }
+    else {
+        $('nav').removeClass('fixed');
+    }
 });
 
 
@@ -137,7 +135,7 @@ function init() {
     const pointLight = new THREE.PointLight(0xffffff);
     pointLight.position.set(15, 15, 50);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff,0.1);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.1);
     scene.add(pointLight, ambientLight);
 
     // Helpers
@@ -147,7 +145,7 @@ function init() {
     scene.add(lightHelper, gridHelper)
 
     controls = new OrbitControls(camera, renderer.domElement);
-    camera.position.set( 0, 20, 100 );
+    camera.position.set(0, 20, 100);
 }
 // function moveCamera() {
 //     const t = document.body.getBoundingClientRect().top;
@@ -175,7 +173,7 @@ function onPointerMove(event) {
 
 function animate() {
     requestAnimationFrame(animate)
-    
+
     // torus.rotation.x += 0.01;
     // planet.rotation.y += 0.001;
     // torus.rotation.z += 0.01;
