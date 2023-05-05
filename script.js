@@ -1,20 +1,17 @@
 import './style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import * as $ from 'jquery'
 import Swiper, { Autoplay, Navigation, Pagination } from 'swiper';
-//nav bar
-$(window).bind('scroll', function () {
-    var navHeight = $(window).height() - 70;
-    if ($(window).scrollTop() > navHeight) {
-        $('nav').addClass('fixed');
-    }
-    else {
-        $('nav').removeClass('fixed');
+
+
+window.addEventListener('scroll', function() {
+    var navHeight = window.innerHeight - 70;
+    if (window.pageYOffset > navHeight) {
+        document.querySelector('nav').classList.add('fixed');
+    } else {
+        document.querySelector('nav').classList.remove('fixed');
     }
 });
-
-
 //projects
 var swiper = new Swiper(".mySwiper", {
     modules: [Navigation, Pagination, Autoplay],
