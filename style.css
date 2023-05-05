@@ -90,7 +90,7 @@ section {
     height: 100vh;
     display: flex;
     align-items: center;
-    background-color: #91299f;
+    /* background-color: #91299f; */
     
 
 
@@ -151,7 +151,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    background-color: #29439f;
+    /* background-color: #29439f; */
 }
 
 .swiper {
