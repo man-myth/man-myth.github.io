@@ -1,8 +1,17 @@
 @font-face {
     font-family: Blanka;
-    src: url("public\Blanka.woff") format("woff"), url("public\Blanka.ttf") format("truetype");
+    src: url("/res/fonts/Blanka.woff") format("woff"), url("/res/fonts/Blanka.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: didact;
+    src: url("/res/public/fonts/DidactGothic-Regular.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: poppins;
+    src: url("/res/public/fonts/Poppins-ExtraLight.ttf") format("ttf");
+}
 
 canvas {
     position: fixed;
@@ -21,9 +30,8 @@ html {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
-
-
 
 header {
     text-align: center;
@@ -32,34 +40,40 @@ header {
 
 body {
     color: #fff;
-    font-family: 'open-sans-bold', AvenirNext-Medium, sans-serif;
+    font-family: didact, sans-serif;
     font-size: 18px;
     text-align: center;
     line-height: 1;
 }
 
-p{
+p {
     line-height: 1.5rem;
 }
-header a{
+
+header a {
     font-size: 2.5rem;
 }
 
 h1 {
     font-family: Blanka;
-    font-size: 48px;
+    font-size: 3rem;
     font-weight: bold;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 h2 {
-    font-size: 24px;
+    font-family: poppins;
+    font-size: 2.5rem;
     font-weight: normal;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+h3 {
+    font-size: 1rem;
+    font-weight: normal;
+}
 
 section {
     max-width: 100vw;
@@ -76,8 +90,19 @@ section {
     height: 100vh;
     display: flex;
     align-items: center;
-}
+    background-color: #91299f;
+    
 
+
+}
+#about .background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* border: 10rem solid #000000;
+    border-left: 20rem solid #000000;
+    border-right: 20rem solid #000; */
+}
 .about-me {
     width: 60vw;
     height: 60vh;
@@ -103,7 +128,7 @@ section {
 .portrait {
     flex-basis: 35%;
     overflow: hidden;
-    background-image: url(portrait.jpg);
+    background-image: url(/res/pics/portrait.jpg);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -125,17 +150,18 @@ section {
     max-height: 100vh;
     display: flex;
     flex-direction: column;
+    gap: 3rem;
+    background-color: #29439f;
 }
 
 .swiper {
-    width: 80%;
+    width: 100%;
     height: 70%;
 }
 
 .swiper-slide {
     text-align: center;
     font-size: 1rem;
-    background: #f20b0b;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,35 +174,121 @@ section {
     height: 100%;
     object-fit: cover;
 }
-.swiper-slide a{
+
+/* .swiper-slide a {
     background-image: url(portrait.jpg);
-    /* background: blue; */
+    background: blue;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
-}
+} */
 
-#projects h1{
+#projects h1 {
     margin: 1rem;
 }
 
-/* Top nav bar */
-/* @import url(https://fonts.googleapis.com/css?family=Open+Sans); */
+.box {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #eeeeee;
+    background-color: transparent;
+    perspective: 1000px;
+}
 
-* {
-    margin: 0;
-    padding: 0;
+.box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.box:hover .box-inner {
+    transform: rotateY(180deg);
+}
+
+.box-front,
+.box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.box-front {
+    color: #111111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.box-back {
+    color: #eeeeee;
+    transform: rotateY(180deg);
+    background-color: #000000;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem
+}
+
+.box-front.p1 {
+    background-image: url(/res/pics/quiz.jpg);
+}
+
+.box-front.p2 {
+    background-image: url(/res/pics/portfolio.jpg);
+}
+
+.box-front.p3 {
+    background-image: url(/res/pics/privacy.jpg);
+}
+
+.box-front.p4 {
+    background-image: url(/res/pics/classroom.jpg);
+}
+
+.box-front.p5 {
+    background-image: url(/res/pics/simulation.jpg);
+}
+
+.box-front.p6 {
+    background-image: url(/res/pics/messaging.jpg);
+}
+
+.box-front.p7 {
+    background-image: url/res/pics/(postfix-infix.jpg);
+}
+
+.box-front.p8 {
+    background-image: url(/res/pics/huffman.jpg);
 }
 
 
-/* This class is added on scroll */
+
+.box-back .fa.fa-github {
+    font-size: 3rem;
+    color: white;
+}
+
+/* Top nav bar */
+
 .fixed {
     position: fixed;
     top: 0;
-    height: 70px;
-    z-index: 1;
+    height: 4.55rem;
+    z-index: 100;
 }
 
 /* Navigation Settings */
@@ -184,18 +296,28 @@ nav {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 70px;
-    background: #fff;
+    height: 4.55rem;
+    background: black;
+    border-bottom: 1px solid;
 }
 
 nav li {
     display: inline-block;
-    padding: 24px 10px;
+    padding: 1.8rem 1.5rem;
 }
 
 nav li a {
-    color: #757575;
+    color: #8e8e8e;
     text-transform: uppercase;
+    text-decoration: none;
+}
+
+/* Border X get width  */
+
+
+nav li a:hover {
+    color: white;
+    text-decoration: underline;
 }
 
 
@@ -455,3 +577,280 @@ nav li a {
 }
 
 /* end of sub head title */
+
+.section-header {
+    margin: 2rem;
+}
+
+/* contact form */
+.contact-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin: 0 auto;
+    padding: 1rem;
+    position: relative;
+    width: 60vw;
+}
+
+/* Left contact page */
+.form-horizontal {
+    /*float: left;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 55%;
+    font-family: 'Lato';
+}
+
+.form-control,
+textarea {
+    width: 90%;
+    padding: 1rem;
+    margin: 0.8rem;
+    background-color: #000;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.send-button {
+    margin-top: 1rem;
+    height: 3rem;
+    width: 12rem;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+}
+
+.alt-send-button {
+    width: 100%;
+    height: 100%;
+    transition: all .2s ease-in-out;
+}
+
+.send-text {
+    display: block;
+    margin-top: 10px;
+    font: 700 1rem 'Lato', sans-serif;
+    letter-spacing: 2px;
+}
+
+.fa.fa-paper-plane {
+    margin: 0.4rem;
+    font-size: 2rem;
+}
+
+.alt-send-button:hover {
+    transform: translate3d(0px, -40px, 0px);
+}
+
+/* Right Contact Page */
+.direct-contact-container {
+    width: 40%;
+}
+
+/* Location, Phone, Email Section */
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-item {
+    line-height: 4.5rem;
+    color: #aaa;
+}
+
+.contact-text {
+    font: 300 1rem 'Lato', sans-serif;
+    letter-spacing: 1.9px;
+    color: #bbb;
+}
+
+.place {
+    margin-left: 1rem;
+}
+
+.phone {
+    margin-left: 1rem;
+}
+
+.gmail {
+    margin-left: 1rem;
+}
+
+.contact-text a {
+    color: #bbb;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+
+.contact-text a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* Social Media Icons */
+.social-media-list {
+    position: relative;
+    font-size: 1.7rem;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.social-media-list li a {
+    color: #fff;
+}
+
+.social-media-list li {
+    position: relative;
+    display: inline-block;
+    height: 3.5rem;
+    width: 3.5rem;
+    margin: 0.8rem 0.3rem;
+    line-height: 3.5rem;
+    border-radius: 50%;
+    color: #fff;
+    background-color: rgb(27, 27, 27);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.social-media-list li:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 0 1px #fff;
+    transition: all .2s ease-in-out;
+}
+
+.social-media-list li:hover {
+    background-color: #fff;
+}
+
+.social-media-list li:hover:after {
+    z-index: -1;
+    opacity: 1;
+    transform: scale(1.12);
+    transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+}
+
+.social-media-list li:hover a {
+    color: #000;
+}
+
+hr {
+    border-color: rgba(255, 255, 255, 0.6);
+    width: 20%;
+}
+
+.direct-contact-container hr {
+    margin: 0.5rem;
+    width: 100%;
+}
+
+/* Media Queries*/
+@media screen and (max-width: 850px) {
+    .contact-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+    }
+
+    .direct-contact-container,
+    .form-horizontal {
+        margin: 0 auto;
+    }
+
+    .direct-contact-container {
+        margin-top: 60px;
+        max-width: 300px;
+    }
+
+    .social-media-list li {
+        height: 60px;
+        width: 60px;
+        line-height: 60px;
+    }
+
+    .social-media-list li:after {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+    }
+}
+
+@media screen and (max-width: 569px) {
+
+    .direct-contact-container,
+    .form-wrapper {
+        float: none;
+        margin: 0 auto;
+    }
+
+    .form-control,
+    textarea {
+
+        margin: 0 auto;
+    }
+
+
+    .name,
+    .email,
+    textarea {
+        width: 280px;
+    }
+
+    .direct-contact-container {
+        margin-top: 60px;
+        max-width: 280px;
+    }
+
+    .social-media-list {
+        left: 0;
+    }
+
+    .social-media-list li {
+        height: 55px;
+        width: 55px;
+        line-height: 55px;
+        font-size: 2rem;
+    }
+
+    .social-media-list li:after {
+        width: 55px;
+        height: 55px;
+        line-height: 55px;
+    }
+
+}
+
+@media screen and (max-width: 410px) {
+    .send-button {
+        width: 99%;
+    }
+}
+
+/* Contact form */
+
+
+footer {
+    background-color: #000;
+}
+
+

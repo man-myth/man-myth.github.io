@@ -21,32 +21,53 @@ $(document).ready(function () {
 var swiper = new Swiper(".mySwiper", {
     modules: [Navigation, Pagination, Autoplay],
     speed: 500,
-    slidesPerView: 3,
-    spaceBetween: 30,
+    slidesPerView: 4,
+    spaceBetween: 10,
     freeMode: true,
     grabCursor: true,
     loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
+    // pagination: {
+    //     el: ".swiper-pagination",
+    //     clickable: true,
+    // },
 
     // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-
-
-    // autoplay: {
-    //     delay: 2500,
-    //     disableOnInteraction: false,
+    // navigation: {
+    //     nextEl: '.swiper-button-next',
+    //     prevEl: '.swiper-button-prev',
     // },
 
 
+    autoplay: {
+        delay: 1500,
+        disableOnInteraction: true,
+    },
 
 });
 
+//contact form
+document.querySelector('#contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log(e.target.elements.name.value);
+    console.log(e.target.elements.email.value);
+    console.log(e.target.elements.message.value);
+
+    Email.send({
+        SecureToken: "938bc9ef-b493-46b1-889a-3ed5e920edf8",
+        To: 'manmeets1100@gmail.com',
+        From: 'mnmyt.dev@gmail.com',
+        Subject: "Inquiry from My Website",
+        Body: "Name: " + e.target.elements.name.value +
+            "<br> Email: " + e.target.elements.email.value +
+            "<br> Message: " + e.target.elements.message.value
+    }).then(
+        message => alert("Thank you for connecting with me")
+    );
+
+    e.target.elements.name.value = '';
+    e.target.elements.email.value = '';
+    e.target.elements.message.value = '';
+});
 
 
 let camera
@@ -57,14 +78,15 @@ let mouseX = 0
 let mouseY = 0
 let windowHalfX = window.innerWidth / 2
 let windowHalfY = window.innerHeight / 2
-let torus
+let planet
+let controls
 
 init()
 animate()
 
 function init() {
     camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 5, 2000)
-    camera.position.z = 500
+    camera.position.z = 10
 
     scene = new THREE.Scene()
     scene.fog = new THREE.FogExp2(0x0000ff, 0.001)
@@ -101,22 +123,31 @@ function init() {
     window.addEventListener('resize', onWindowResize)
 
 
-    // // Torus
+    // Planet
+    // const earthTexture = new THREE.TextureLoader().load('res/pics/gas_planet_map.jpg');
+    // const normalTexture = new THREE.TextureLoader().load('res/pics/normal_texture2.jpg');
+    // const sphere = new THREE.SphereGeometry(10, 64, 64);
+    // const material2 = new THREE.MeshStandardMaterial({ normalMap:normalTexture, map:earthTexture, roughness:0.1 });
+    // planet = new THREE.Mesh(sphere, material2);
 
-    // const geometry2 = new THREE.TorusGeometry(10, 3, 16, 100);
-    // const material2 = new THREE.MeshStandardMaterial({ color: 0xff6347 });
-    // torus = new THREE.Mesh(geometry2, material2);
+    // scene.add(planet);
 
-    // scene.add(torus);
+    // Lights
 
-    // // Lights
+    const pointLight = new THREE.PointLight(0xffffff);
+    pointLight.position.set(15, 15, 50);
 
-    // const pointLight = new THREE.PointLight(0xffffff);
-    // pointLight.position.set(5, 5, 5);
+    const ambientLight = new THREE.AmbientLight(0xffffff,0.1);
+    scene.add(pointLight, ambientLight);
 
-    // const ambientLight = new THREE.AmbientLight(0xffffff);
-    // scene.add(pointLight, ambientLight);
+    // Helpers
 
+    const lightHelper = new THREE.PointLightHelper(pointLight)
+    const gridHelper = new THREE.GridHelper(2000, 50);
+    scene.add(lightHelper, gridHelper)
+
+    controls = new OrbitControls(camera, renderer.domElement);
+    camera.position.set( 0, 20, 100 );
 }
 // function moveCamera() {
 //     const t = document.body.getBoundingClientRect().top;
@@ -144,10 +175,12 @@ function onPointerMove(event) {
 
 function animate() {
     requestAnimationFrame(animate)
-    render()
+    
     // torus.rotation.x += 0.01;
-    // torus.rotation.y += 0.005;
+    // planet.rotation.y += 0.001;
     // torus.rotation.z += 0.01;
+    controls.update()
+    render()
 }
 
 function render() {
