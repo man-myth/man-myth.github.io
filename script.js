@@ -36,10 +36,10 @@ function initSwiper(numSlides){
         },
     
     
-        // autoplay: {
-        //     delay: 1500,
-        //     disableOnInteraction: true,
-        // },
+        autoplay: {
+            delay: 1500,
+            disableOnInteraction: true,
+        },
     
     });
     
