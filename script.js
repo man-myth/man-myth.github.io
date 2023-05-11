@@ -15,12 +15,12 @@ window.addEventListener('scroll', function () {
 });
 
 //projects
-function initSwiper(numSlides){
+function initSwiper(numSlides) {
     var swiper = new Swiper(".mySwiper", {
         modules: [Navigation, Pagination, Autoplay],
         speed: 500,
         slidesPerView: numSlides,
-        spaceBetween: 10,
+        spaceBetween: 30,
         freeMode: true,
         grabCursor: true,
         loop: true,
@@ -28,37 +28,36 @@ function initSwiper(numSlides){
         //     el: ".swiper-pagination",
         //     clickable: true,
         // },
-    
+
         // Navigation arrows
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-    
-    
+
+
         autoplay: {
             delay: 1500,
             disableOnInteraction: true,
         },
-    
+
     });
-    
+
 }
 
 
 // Define a media query
 var mediaQuery600 = window.matchMedia('(max-width: 600px)');
 var mediaQuery1140 = window.matchMedia('(max-width: 1140px)');
-var mediaQuery390 = window.matchMedia('(max-width: 400px)');
 
 // Define a callback function
 function handleMediaQueryChange600(mediaQuery) {
-  if (mediaQuery600.matches) {
-    initSwiper(2)
+    if (mediaQuery600.matches) {
+        initSwiper(1)
 
-  } else{
-    initSwiper(4)
-  }
+    } else {
+        initSwiper(2)
+    }
 }
 
 
@@ -67,12 +66,12 @@ handleMediaQueryChange600(mediaQuery600);
 mediaQuery600.addListener(handleMediaQueryChange600);
 
 function handleMediaQueryChange1140(mediaQuery) {
-  if (mediaQuery1140.matches) {
-    initSwiper(3)
+    if (mediaQuery1140.matches) {
+        initSwiper(2)
 
-  } else{
-    initSwiper(4)
-  }
+    } else {
+        initSwiper(2)
+    }
 }
 
 
@@ -81,27 +80,9 @@ handleMediaQueryChange1140(mediaQuery1140);
 mediaQuery1140.addListener(handleMediaQueryChange1140);
 
 
-function handleMediaQueryChange390(mediaQuery) {
-  if (mediaQuery390.matches) {
-    initSwiper(1)
-
-  } else{
-    initSwiper(4)
-  }
-}
-
-
-handleMediaQueryChange390(mediaQuery390);
-
-mediaQuery390.addListener(handleMediaQueryChange390);
-
 //contact form
 document.querySelector('#contact-form').addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log(e.target.elements.name.value);
-    console.log(e.target.elements.email.value);
-    console.log(e.target.elements.message.value);
-
     Email.send({
         SecureToken: "938bc9ef-b493-46b1-889a-3ed5e920edf8",
         To: 'manmeets1100@gmail.com',
@@ -129,19 +110,25 @@ let mouseY = 0
 let windowHalfX = window.innerWidth / 2
 let windowHalfY = window.innerHeight / 2
 let planet
+let planet1
+let sun
+let planet3
+let planet4
+let planet5
+let planet6
+let planet7
+let planet8
+let planet9
 let controls
 let t
 let gridHelper
+
 init()
 animate()
 
 function init() {
-    camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000)
-    // camera.position.z = 10
-    // camera.position.setZ(100);
-    // camera.position.setX(500);
-    // camera.position.setY(300);
-    // camera.position.set(0, 0, 100);
+    camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 10000)
+
 
     scene = new THREE.Scene()
     scene.fog = new THREE.FogExp2(0x0000ff, 0.001)
@@ -177,54 +164,136 @@ function init() {
     document.body.addEventListener('pointermove', onPointerMove)
     window.addEventListener('resize', onWindowResize)
 
+    const normalTexture1 = new THREE.TextureLoader().load('res/pics/normal_texture1.jpg');
+    const normalTexture2 = new THREE.TextureLoader().load('res/pics/normal_texture2.jpg');
+    const normalTexture3 = new THREE.TextureLoader().load('res/pics/normal_texture3.jpg');
 
-    // Planet
-    const earthTexture = new THREE.TextureLoader().load('res/pics/gas_planet_map.jpg');
-    const normalTexture = new THREE.TextureLoader().load('res/pics/normal_texture2.jpg');
-    const sphere = new THREE.SphereGeometry(10, 64, 64);
-    const material2 = new THREE.MeshStandardMaterial({ normalMap: normalTexture, map: earthTexture, roughness: 0.1 });
+
+
+    //sun
+    const sunTexture = new THREE.TextureLoader().load('res/pics/sun map.jpg');
+    let sphere = new THREE.SphereGeometry(200, 64, 64);
+    const sunmaterial = new THREE.MeshStandardMaterial({ normalMap: normalTexture3, map: sunTexture, roughness: 0.1 });
+    sun = new THREE.Mesh(sphere, sunmaterial);
+    sun.position.z = 100;
+    sun.position.x = -600;
+    scene.add(sun);
+
+    //planet 5
+    const mercuryTexture = new THREE.TextureLoader().load('res/pics/mercury-map.jpg');
+    sphere = new THREE.SphereGeometry(5, 64, 64);
+    const material5 = new THREE.MeshStandardMaterial({ normalMap: normalTexture2, map: mercuryTexture, roughness: 0.1 });
+    planet5 = new THREE.Mesh(sphere, material5);
+    planet5.position.z = 100;
+    planet5.position.x = -300;
+    scene.add(planet5);
+
+    //planet 6
+    const venusTexture = new THREE.TextureLoader().load('res/pics/venus-map.jpg');
+    sphere = new THREE.SphereGeometry(13, 64, 64);
+    const material6 = new THREE.MeshStandardMaterial({ normalMap: normalTexture3, map: venusTexture, roughness: 0.1 });
+    planet6 = new THREE.Mesh(sphere, material6);
+    planet6.position.z = -200;
+    planet6.position.x = -200;
+    scene.add(planet6);
+
+    //planet 2
+    const earthTexture = new THREE.TextureLoader().load('res/pics/earth_daymap.jpg');
+    sphere = new THREE.SphereGeometry(13, 64, 64);
+    const material1 = new THREE.MeshStandardMaterial({ normalMap: normalTexture1, map: earthTexture, roughness: 0.1 });
+    planet1 = new THREE.Mesh(sphere, material1);
+    planet1.position.z = 200;
+    planet1.position.x = -100;
+    scene.add(planet1);
+
+    // Planet 1
+    const gasTexture = new THREE.TextureLoader().load('res/pics/gas-planet-map.jpg');
+    sphere = new THREE.SphereGeometry(10, 64, 64);
+    const material2 = new THREE.MeshStandardMaterial({ normalMap: normalTexture2, map: gasTexture, roughness: 0.1 });
     planet = new THREE.Mesh(sphere, material2);
     planet.position.z = -15;
+    planet.position.x = 0;
+
     scene.add(planet);
 
-    // Lights
+    //planet 7
+    const marsTexture = new THREE.TextureLoader().load('res/pics/mars-map.jpg');
+    sphere = new THREE.SphereGeometry(7, 64, 64);
+    const material7 = new THREE.MeshStandardMaterial({ normalMap: normalTexture3, map: marsTexture, roughness: 0.1 });
+    planet7 = new THREE.Mesh(sphere, material7);
+    planet7.position.z = -100;
+    planet7.position.x = 100;
+    scene.add(planet7);
 
-    const pointLight = new THREE.PointLight(0xffffff);
-    pointLight.position.set(15, 15, 50);
+    //planet 3
+    const jupiterTexture = new THREE.TextureLoader().load('res/pics/jupiter-map.jpg');
+    sphere = new THREE.SphereGeometry(50, 64, 64);
+    const material3 = new THREE.MeshStandardMaterial({ normalMap: normalTexture3, map: jupiterTexture, roughness: 0.1 });
+    planet3 = new THREE.Mesh(sphere, material3);
+    planet3.position.z = -800;
+    planet3.position.x = 10;
+    scene.add(planet3);
+
+
+    //planet 8
+    const saturnTexture = new THREE.TextureLoader().load('res/pics/saturn-map.jpg');
+    sphere = new THREE.SphereGeometry(60, 64, 64);
+    const material8 = new THREE.MeshStandardMaterial({ normalMap: normalTexture2, map: saturnTexture, roughness: 0.1 });
+    planet8 = new THREE.Mesh(sphere, material8);
+    planet8.position.z = 1000;
+    planet8.position.x = 10;
+    scene.add(planet8);
+
+    //planet 8
+    const uranusTexture = new THREE.TextureLoader().load('res/pics/uranus-map.jpg');
+    sphere = new THREE.SphereGeometry(40, 64, 64);
+    const material9 = new THREE.MeshStandardMaterial({ normalMap: normalTexture2, map: uranusTexture, roughness: 0.1 });
+    planet9 = new THREE.Mesh(sphere, material9);
+    planet9.position.z = 500;
+    planet9.position.x = 500;
+    scene.add(planet9);
+
+
+
+    //planet 4
+    const neptuneTexture = new THREE.TextureLoader().load('res/pics/neptune-map.jpg');
+    sphere = new THREE.SphereGeometry(17, 64, 64);
+    const material4 = new THREE.MeshStandardMaterial({ normalMap: normalTexture2, map: neptuneTexture, roughness: 0.1 });
+    planet4 = new THREE.Mesh(sphere, material4);
+    planet4.position.z = 100;
+    planet4.position.x = 500;
+    scene.add(planet4);
+
+
+
+    // Lights
+    const directionLight = new THREE.DirectionalLight(0xffffff);
+    directionLight.position.set(-600, 0, 100).normalize;
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.1);
-    scene.add(pointLight, ambientLight);
+    scene.add(directionLight, ambientLight);
 
     // Helpers
 
-    // // const lightHelper = new THREE.PointLightHelper(pointLight)
+    // const lightHelper = new THREE.PointLightHelper(pointLight2)
     gridHelper = new THREE.GridHelper(2000, 50);
     // scene.add(lightHelper, gridHelper)
 
     // controls = new OrbitControls(camera, renderer.domElement);
-    // camera.position.set(100, 100, 1000);
 }
 
 function moveCamera() {
     t = document.body.getBoundingClientRect().top;
-    // console.log(t);
-   
-   
-    if (t < -600) {
+
+    if (t < -500) {
         scene.rotation.x = 0;
         scene.rotation.y = 0;
         animateCameraToPosition(new THREE.Vector3(20, -1, 7))
         scene.remove(gridHelper);
     }
     if (t < -780) {
-        console.log(scene.rotation.y);
         scene.rotation.y = t * -0.0013 - 1;
     }
-
-    // console.log("t: " + t);
-    // console.log("X position: " + camera.position.x);
-    // console.log("Y position: " + camera.position.y);
-    // console.log("Z position: " + camera.position.z);
     if (t >= -600) {
         animateCameraToPosition(new THREE.Vector3(500, 300, 100))
         scene.add(gridHelper)
@@ -277,9 +346,16 @@ function onPointerMove(event) {
 function animate() {
     requestAnimationFrame(animate)
 
-    // torus.rotation.x += 0.01;
     planet.rotation.y += 0.002;
-    // torus.rotation.z += 0.01;
+    planet1.rotation.y += 0.002;
+    sun.rotation.y += 0.001;
+    planet3.rotation.y += 0.003;
+    planet4.rotation.y += 0.005;
+    planet5.rotation.y += 0.001;
+    planet6.rotation.y += 0.004;
+    planet7.rotation.y += 0.003;
+    planet8.rotation.y += 0.0005;
+    planet9.rotation.y += 0.0009;
     // controls.update()
     render()
 }
@@ -289,19 +365,10 @@ function render() {
     renderer.render(scene, camera)
     if (t >= -600) {
 
-        // console.log("mouseX: " + mouseX);
-        // console.log("mouseY: " + mouseY);
-
         camera.position.x += (mouseX * 2 - camera.position.x) * 0.02
         camera.position.y += (-mouseY * 2 - camera.position.y) * 0.02
         scene.rotation.x += 0.001
         scene.rotation.y += 0.002
-    }
-   
-    if (t < -600) {
-        // camera.position.set(20, 0, 12);
-        // camera.rotation.y = -100;
-
     }
 
 }
