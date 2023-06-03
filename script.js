@@ -4,6 +4,14 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import Swiper, { Autoplay, Navigation, Pagination } from 'swiper';
 
 
+document.getElementById('loading-container').style.display = 'flex';
+
+// Wait for all the content to load
+window.addEventListener('load', function() {
+  document.getElementById('loading-container').style.display = 'none';
+});
+
+
 
 window.addEventListener('scroll', function () {
     var navHeight = window.innerHeight - 70;
