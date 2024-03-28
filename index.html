@@ -1,274 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manmeet Singh Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    /> -->
+  </head>
 
-<body>
+  <body>
     <div id="loading-container">
-        <img src="/public/res/pics/loader.gif">
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
+      <img src="/public/res/pics/loader.gif" />
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
     </div>
     <canvas id="bg"></canvas>
-    <nav class="topbar">
-        <ul>
-            <li>
-                <a href="#home">Home</a>
-            </li>
-            <li>
-                <a href="#about">About</a>
-            </li>
-            <li>
-                <a href="#projects">Projects</a>
-            </li>
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
+    <nav id="topBar">
+      <ul>
+        <li>
+          <a href="#home" class="link active">Home</a>
+        </li>
+        <li>
+          <a href="#about" class="link">About</a>
+        </li>
+        <li>
+          <a href="#projects" class="link">Projects</a>
+        </li>
+        <li>
+          <a href="#contact" class="link">Contact</a>
+        </li>
+      </ul>
     </nav>
     <section id="home">
-        <header>
-            <a>Hi, I'm &nbsp;<h1 style="display: inline;">Manmeet</h1></a>
-        </header>
-        <div class="subheading-container">
-            <p class="subheading-text">A </p>
-            <ul class="subheading-list">
-                <li class="subheading-list-item">Full-Stack Developer</li>
-                <li class="subheading-list-item">Software Engineer</li>
-                <li class="subheading-list-item">AI/ML Enthusiast</li>
-                <li class="subheading-list-item">Researcher</li>
-            </ul>
-        </div>
-        <br><br>
-        <hr>
-        <ul class="social-media-list">
-            <li>
-                <a href="https://github.com/man-myth" target="_blank" class="contact-icon">
-                    <i class="fa fa-github" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li>
-                <a href="https://linkedin.com/in/man-myth/" target="_blank" class="contact-icon">
-                    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li><a href="https://twitter.com/manmeets1100" target="_blank" class="contact-icon">
-                    <i class="fa fa-twitter" aria-hidden="true"></i></a>
-            </li>
-            <li><a href="https://www.instagram.com/s.manmeet123/" target="_blank" class="contact-icon">
-                    <i class="fa fa-instagram" aria-hidden="true"></i></a>
-            </li>
+      <header>
+        <a
+          >Hi, I'm &nbsp;
+          <h1 style="display: inline">Manmeet</h1></a
+        >
+      </header>
+      <div class="subheading-container">
+        <p class="subheading-text">A</p>
+        <ul class="subheading-list">
+          <li class="subheading-list-item">Full-Stack Developer</li>
+          <li class="subheading-list-item">Software Engineer</li>
+          <li class="subheading-list-item">AI/ML Enthusiast</li>
+          <li class="subheading-list-item">Researcher</li>
         </ul>
-        <hr>
+      </div>
+      <br /><br />
+      <hr />
+      <ul class="social-media-list">
+        <li>
+          <a
+            href="https://github.com/man-myth"
+            target="_blank"
+            class="contact-icon"
+          >
+            <i class="fa fa-github" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://linkedin.com/in/man-myth/"
+            target="_blank"
+            class="contact-icon"
+          >
+            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://twitter.com/manmeets1100"
+            target="_blank"
+            class="contact-icon"
+          >
+            <i class="fa fa-twitter" aria-hidden="true"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/s.manmeet123/"
+            target="_blank"
+            class="contact-icon"
+          >
+            <i class="fa fa-instagram" aria-hidden="true"></i
+          ></a>
+        </li>
+      </ul>
+      <hr />
     </section>
 
     <section id="about">
-        <div class="about-me">
-            <div class="portrait"> </div>
-            <div class="text">
-                <h1>About Me</h1>
-                <p>I'm Manmeet Singh, a computer science student who is passionate, optimistic, and constantly looking
-                    to learn and grow. As a third-year student at Saint Louis University, I've gained experience in
-                    software development, research, and team collaboration.</p>
-                <br>
-                <p> With technical skills in Java, C++, Python, HTML, CSS, and JavaScript, and proficiency in SQL and
-                    various development tools, I'm always eager to explore new technologies and push myself to learn
-                    more.</p>
-            </div>
+      <div class="about-me">
+        <div class="portrait"></div>
+        <div class="text">
+          <h1>About Me</h1>
+          <p>
+            I'm Manmeet Singh, a computer science student who is passionate,
+            optimistic, and constantly looking for opportunities to learn and grow.
+          </p>
+          <br />
+          <p>
+            With technical skills in React, Vue, NodeJs, Javascript, Java, Python
+            and proficiency in SQL and various development tools,
+            I'm always eager to explore new technologies and push myself to
+            learn more.
+          </p>
         </div>
+      </div>
     </section>
 
-
     <section id="projects">
-        <h1>Projects</h1>
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="box">
-                        <div class="box-inner">
-                            <div class="box-front p1">
-                                <h2>Web-Based Quiz System </h2>
-                            </div>
-                            <div class="box-back">
-                                <h2>Web-based Quiz System </h2>
-                                <h3>This system is a web-based platform that uses HTML, CSS, php, SQL and Node.js. It
-                                    has two
-                                    interfaces: one for teachers to create and manage quizzes, and one for students to
-                                    take the quizzes. Teachers can create quizzes, add questions, and set the correct
-                                    answers, while students can select and take the available quizzes. The system can
-                                    automatically grade the responses and provide students with their scores. </h3>
-                                <a href="https://github.com/pagina-swifties/quiz" target="_blank">
-                                    <i class="fa fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+      <h1>Projects</h1>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="box">
+              <div class="box-inner">
+                <div class="box-front p1">
+                  <h2>Web-Based Quiz System</h2>
                 </div>
-                <div class="swiper-slide">
-                    <div class="box">
-                        <div class="box-inner">
-                            <div class="box-front p2">
-                                <h2>Portfolio Website </h2>
-                            </div>
-                            <div class="box-back">
-                                <h2>Portfolio Website </h2>
-                                <h3>A learning project that allowed me to explore the concepts of dynamic 3D graphics
-                                    and animations. Through this project, I understood the basic concepts of creating 3D
-                                    objects, add textures and lighting, and animate them using keyframes and other
-                                    techniques. Using three.js, I created a portfolio to make an immersive and
-                                    interactive website that showcases my skills and achievements as a CS student. </h3>
-                                <a href="https://github.com/man-myth" target="_blank">
-                                    <i class="fa fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="box-back">
+                  <h2>Web-based Quiz System</h2>
+                  <h3>
+                    This system is a web-based platform that uses HTML, CSS,
+                    php, SQL and Node.js. It has two interfaces: one for
+                    teachers to create and manage quizzes, and one for students
+                    to take the quizzes. Teachers can create quizzes, add
+                    questions, and set the correct answers, while students can
+                    select and take the available quizzes. The system can
+                    automatically grade the responses and provide students with
+                    their scores.
+                  </h3>
+                  <a
+                    href="https://github.com/pagina-swifties/quiz"
+                    target="_blank"
+                  >
+                    <i class="fa fa-github"></i>
+                  </a>
                 </div>
-                <div class="swiper-slide">
-                    <div class="box">
-                        <div class="box-inner">
-                            <div class="box-front p3">
-                                <h2>Digital Privacy website </h2>
-                            </div>
-                            <div class="box-back">
-                                <h2>Online Quiz System </h2>
-                                <h3>A static website designed to spread awareness about digital privacy and educate
-                                    people on how to secure their online activities. During the course of this project,
-                                    I learned the fundamentals of web development, including JavaScript, HTML, CSS, and
-                                    other essential web technologies. Through this project, I feel confident in my
-                                    ability to create compelling and engaging web pages that incorporate the latest
-                                    technologies and design trends.</h3>
-                                <a href="https://pagina-swifties.github.io/digital-privacy/" target="_blank">
-                                    <i class="fa fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="box">
-                        <div class="box-inner">
-                            <div class="box-front p4">
-                                <h2>Assignment Manager App (Java) </h2>
-                            </div>
-                            <div class="box-back">
-                                <h2>Assignment Manager App (Java)</h2>
-                                <h3>This is a useful tool for students and professionals to keep track of their tasks
-                                    and deadlines. With its user-friendly interface, the app allows users to create and
-                                    manage multiple assignments, set reminders for upcoming deadlines, and track their
-                                    progress. By creating this app, I gained a deeper understanding of Java programming
-                                    concepts, including data structures, GUI programming, and software engineering
-                                    principles.</h3>
-                                <a href="https://github.com/man-myth/AssignmentManager" target="_blank">
-                                    <i class="fa fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="box">
-                        <div class="box-inner">
-                            <div class="box-front p5">
-                                <h2>Single channel simulation model with statistical accumulators </h2>
-                            </div>
-                            <div class="box-back">
-                                <h3>Simulation model with statistical accumulators </h3>
-                                <h5>I created is a tool that helps users simulate a single channel system with
-                                    statistical accumulators. The app allows users to input various parameters such as
-                                    the arrival rate, service rate, and number of customers to be served, and simulates
-                                    the system based on these parameters. The app uses statistical accumulators to
-                                    gather data on system performance, including average wait time, service time, and
-                                    utilization.</h5>
-                                <a href="https://github.com/man-myth/SCQ-StatisticalAccumulators" target="_blank">
-                                    <i class="fa fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide">
-                    <div class="box">
-                        <div class="box-inner">
-                            <div class="box-front p7">
-                                <h2>Postfix-Infix converter </h2>
-                            </div>
-                            <div class="box-back">
-                                <h2>Postfix-Infix converter (Java) </h2>
-                                <h3>The postfix to infix converter is a tool for converting postfix expressions to infix
-                                    notation. The tool asks users to input any valid postfix or infix expression
-                                    and convert it to its counterpart notation. The converter provides a step-by-step breakdown
-                                    of the conversion process, making it easy for users to understand how the conversion
-                                    is performed. </h3>
-                                <a href="https://github.com/man-myth/Postfix-Infix-Converter" target="_blank">
-                                    <i class="fa fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="box">
-                        <div class="box-inner">
-                            <div class="box-front p6">
-                                <h2>Instant messaging application</h2>
-                            </div>
-                            <div class="box-back">
-                                <h2>Instant messaging application </h2>
-                                <h3>An communication application with login, session management, user management, and
-                                    security features. The app allows users to send broadcast messages, send private messages,and  mark/bookmark frequently contacted users or groups. The conference feature allows users to create and invite
-                                    others to groups, similar to the groups feature in popular messaging apps. 
-                                    status of other users.</h3>
-                                <a href="https://github.com/man-myth/Instant-Messaging-App" target="_blank">
-                                    <i class="fa fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="box">
-                        <div class="box-inner">
-                            <div class="box-front p8">
-                                <h2>Huffman coder and decoder </h2>
-                            </div>
-                            <div class="box-back">
-                                <h2>Huffman coder and decoder </h2>
-                                <h3>. The app allows users to input a text message and encode it using Huffman coding, resulting in a
-                                    compressed representation of the text. Conversely, users can also input a
-                                    Huffman-encoded message and decode it back into its original text format. The app
-                                    features a user-friendly interface and provides step-by-step breakdowns of the
-                                    encoding and decoding processes.</h3>
-                                <a href="https://github.com/man-myth/Huffman-Code" target="_blank">
-                                    <i class="fa fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+              </div>
             </div>
-            <div class="swiper-pagination"></div>
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="box">
+              <div class="box-inner">
+                <div class="box-front p2">
+                  <h2>Portfolio Website</h2>
+                </div>
+                <div class="box-back">
+                  <h2>Portfolio Website</h2>
+                  <h3>
+                    A learning project that allowed me to explore the concepts
+                    of dynamic 3D graphics and animations. Through this project,
+                    I understood the basic concepts of creating 3D objects, add
+                    textures and lighting, and animate them using keyframes and
+                    other techniques. Using three.js, I created a portfolio to
+                    make an immersive and interactive website that showcases my
+                    skills and achievements as a CS student.
+                  </h3>
+                  <a href="https://github.com/man-myth" target="_blank">
+                    <i class="fa fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="box">
+              <div class="box-inner">
+                <div class="box-front p3">
+                  <h2>Digital Privacy website</h2>
+                </div>
+                <div class="box-back">
+                  <h2>Online Quiz System</h2>
+                  <h3>
+                    A static website designed to spread awareness about digital
+                    privacy and educate people on how to secure their online
+                    activities. During the course of this project, I learned the
+                    fundamentals of web development, including JavaScript, HTML,
+                    CSS, and other essential web technologies. Through this
+                    project, I feel confident in my ability to create compelling
+                    and engaging web pages that incorporate the latest
+                    technologies and design trends.
+                  </h3>
+                  <a
+                    href="https://pagina-swifties.github.io/digital-privacy/"
+                    target="_blank"
+                  >
+                    <i class="fa fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="box">
+              <div class="box-inner">
+                <div class="box-front p4">
+                  <h2>Assignment Manager App (Java)</h2>
+                </div>
+                <div class="box-back">
+                  <h2>Assignment Manager App (Java)</h2>
+                  <h3>
+                    This is a useful tool for students and professionals to keep
+                    track of their tasks and deadlines. With its user-friendly
+                    interface, the app allows users to create and manage
+                    multiple assignments, set reminders for upcoming deadlines,
+                    and track their progress. By creating this app, I gained a
+                    deeper understanding of Java programming concepts, including
+                    data structures, GUI programming, and software engineering
+                    principles.
+                  </h3>
+                  <a
+                    href="https://github.com/man-myth/AssignmentManager"
+                    target="_blank"
+                  >
+                    <i class="fa fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="box">
+              <div class="box-inner">
+                <div class="box-front p5">
+                  <h2>
+                    Single channel simulation model with statistical
+                    accumulators
+                  </h2>
+                </div>
+                <div class="box-back">
+                  <h3>Simulation model with statistical accumulators</h3>
+                  <h5>
+                    I created is a tool that helps users simulate a single
+                    channel system with statistical accumulators. The app allows
+                    users to input various parameters such as the arrival rate,
+                    service rate, and number of customers to be served, and
+                    simulates the system based on these parameters. The app uses
+                    statistical accumulators to gather data on system
+                    performance, including average wait time, service time, and
+                    utilization.
+                  </h5>
+                  <a
+                    href="https://github.com/man-myth/SCQ-StatisticalAccumulators"
+                    target="_blank"
+                  >
+                    <i class="fa fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <div class="swiper-slide">
+            <div class="box">
+              <div class="box-inner">
+                <div class="box-front p7">
+                  <h2>Postfix-Infix converter</h2>
+                </div>
+                <div class="box-back">
+                  <h2>Postfix-Infix converter (Java)</h2>
+                  <h3>
+                    The postfix to infix converter is a tool for converting
+                    postfix expressions to infix notation. The tool asks users
+                    to input any valid postfix or infix expression and convert
+                    it to its counterpart notation. The converter provides a
+                    step-by-step breakdown of the conversion process, making it
+                    easy for users to understand how the conversion is
+                    performed.
+                  </h3>
+                  <a
+                    href="https://github.com/man-myth/Postfix-Infix-Converter"
+                    target="_blank"
+                  >
+                    <i class="fa fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="box">
+              <div class="box-inner">
+                <div class="box-front p6">
+                  <h2>Instant messaging application</h2>
+                </div>
+                <div class="box-back">
+                  <h2>Instant messaging application</h2>
+                  <h3>
+                    An communication application with login, session management,
+                    user management, and security features. The app allows users
+                    to send broadcast messages, send private messages,and
+                    mark/bookmark frequently contacted users or groups. The
+                    conference feature allows users to create and invite others
+                    to groups, similar to the groups feature in popular
+                    messaging apps. status of other users.
+                  </h3>
+                  <a
+                    href="https://github.com/man-myth/Instant-Messaging-App"
+                    target="_blank"
+                  >
+                    <i class="fa fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="box">
+              <div class="box-inner">
+                <div class="box-front p8">
+                  <h2>Huffman coder and decoder</h2>
+                </div>
+                <div class="box-back">
+                  <h2>Huffman coder and decoder</h2>
+                  <h3>
+                    . The app allows users to input a text message and encode it
+                    using Huffman coding, resulting in a compressed
+                    representation of the text. Conversely, users can also input
+                    a Huffman-encoded message and decode it back into its
+                    original text format. The app features a user-friendly
+                    interface and provides step-by-step breakdowns of the
+                    encoding and decoding processes.
+                  </h3>
+                  <a
+                    href="https://github.com/man-myth/Huffman-Code"
+                    target="_blank"
+                  >
+                    <i class="fa fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-
+        <div class="swiper-pagination"></div>
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
     </section>
 
     <section id="contact">
-        <!-- <h3>Contact</h3>
+      <!-- <h3>Contact</h3>
         <form>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
@@ -278,91 +361,128 @@
             <textarea id="message" name="message" required></textarea>
             <input type="submit" value="Send">
         </form> -->
-        <h1 class="section-header">Contact Me</h1>
-        <div class="contact-wrapper">
+      <h1 class="section-header">Contact Me</h1>
+      <div class="contact-wrapper">
+        <!-- Left contact page -->
 
-            <!-- Left contact page -->
-
-            <form id="contact-form" class="form-horizontal" role="form">
-
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <input type="text" class="form-control" id="name" placeholder="Name" name="name" value=""
-                            required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <input type="email" class="form-control" id="email" placeholder="Email" name="email" value=""
-                            required>
-                    </div>
-                </div>
-
-                <textarea class="form-control" rows="10" placeholder="Message" name="message" required></textarea>
-
-                <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
-                    <div class="alt-send-button">
-                        <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
-                    </div>
-
-                </button>
-
-            </form>
-
-            <!-- Left contact page -->
-
-            <div class="direct-contact-container">
-
-                <ul class="contact-list">
-                    <li class="list-item">
-                        <i class="fa fa-map-marker fa-2x">
-                            <span class="contact-text place">Rosario, La Union, PH</span>
-                        </i>
-                    </li>
-
-                    <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a
-                                    href="tel:00639396504608" title="Give me a call">(+63) 0939-650-4608</a></span></i>
-                    </li>
-
-                    <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a
-                                    href="mailto:manmeets1100@gmail.com"
-                                    title="Send me an email">manmeets1100@gmail.com</a></span></i></li>
-
-                </ul>
-
-                <hr>
-                <ul class="social-media-list">
-                    <li>
-                        <a href="https://github.com/man-myth" target="_blank" class="contact-icon">
-                            <i class="fa fa-github" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://linkedin.com/in/man-myth/" target="_blank" class="contact-icon">
-                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li><a href="https://twitter.com/manmeets1100" target="_blank" class="contact-icon">
-                            <i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    </li>
-                    <li><a href="https://www.instagram.com/s.manmeet123/" target="_blank" class="contact-icon">
-                            <i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    </li>
-                </ul>
-                <hr>
-
+        <form id="contact-form" class="form-horizontal" role="form">
+          <div class="form-group">
+            <div class="col-sm-12">
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="Name"
+                name="name"
+                value=""
+                required
+              />
             </div>
+          </div>
 
+          <div class="form-group">
+            <div class="col-sm-12">
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Email"
+                name="email"
+                value=""
+                required
+              />
+            </div>
+          </div>
+
+          <textarea
+            class="form-control"
+            rows="10"
+            placeholder="Message"
+            name="message"
+            required
+          ></textarea>
+
+          <button
+            class="btn btn-primary send-button"
+            id="submit"
+            type="submit"
+            value="SEND"
+          >
+            <div class="alt-send-button">
+              <i class="fa fa-paper-plane"></i
+              ><span class="send-text">SEND</span>
+            </div>
+          </button>
+        </form>
+
+        <!-- Left contact page -->
+
+        <div class="direct-contact-container">
+          <ul class="contact-list">
+            
+
+            <li class="list-item">
+              <i class="fa fa-envelope fa-2x"
+                ><span class="contact-text gmail"
+                  ><a
+                    href="mailto:manmeets1100@gmail.com"
+                    title="Send me an email"
+                    >manmeets1100@gmail.com</a
+                  ></span
+                ></i
+              >
+            </li>
+          </ul>
+
+          <hr />
+          <ul class="social-media-list">
+            <li>
+              <a
+                href="https://github.com/man-myth"
+                target="_blank"
+                class="contact-icon"
+              >
+                <i class="fa fa-github" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://linkedin.com/in/man-myth/"
+                target="_blank"
+                class="contact-icon"
+              >
+                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://twitter.com/manmeets1100"
+                target="_blank"
+                class="contact-icon"
+              >
+                <i class="fa fa-twitter" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/s.manmeet123/"
+                target="_blank"
+                class="contact-icon"
+              >
+                <i class="fa fa-instagram" aria-hidden="true"></i
+              ></a>
+            </li>
+          </ul>
+          <hr />
         </div>
+      </div>
     </section>
 
     <footer>
-        <hr>
-        <p>&copy; 2023 Manmeet Singh. All rights reserved.</p>
+      <hr />
+      <p>&copy; 2024 Manmeet Singh. All rights reserved.</p>
     </footer>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script type="module" src="/script.js" defer></script>
-</body>
-
+  </body>
 </html>
