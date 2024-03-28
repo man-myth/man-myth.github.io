@@ -5,7 +5,7 @@ on:
     branches:
       - master
 env:
-  VITE_EMAIL_TOKEN: true
+  VITE_EMAIL_TOKEN: ${{ secrets.VITE_EMAIL_TOKEN }}
 jobs:
   build:
     name: Build
