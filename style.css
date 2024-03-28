@@ -140,7 +140,7 @@ section {
 .portrait {
     flex-basis: 35%;
     overflow: hidden;
-    background-image: url(/res/pics/portrait.jpg);
+    background-image: url(/res/pics/portrait.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -329,10 +329,12 @@ nav li a {
     text-decoration: none;
 }
 
-/* Border X get width  */
-
 
 nav li a:hover {
+    color: white;
+    text-decoration: underline;
+}
+nav li a.active {
     color: white;
     text-decoration: underline;
 }
