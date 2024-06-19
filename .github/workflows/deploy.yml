@@ -22,6 +22,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+       - name: Debug Secrets
+        run: echo "VITE_EMAIL_TOKEN=${{ secrets.VITE_EMAIL_TOKEN }}"  # Temporarily print secret value to check
+        
       - name: Set up environment variables
         run: |
           echo "VITE_EMAIL_TOKEN=${{ secrets.VITE_EMAIL_TOKEN }}" >> $GITHUB_ENV
@@ -53,8 +56,7 @@ jobs:
         with:
           name: production-files
           path: ./dist
-      - name: Debug Environment Variables on deploy
-        run: printenv | grep VITE
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
