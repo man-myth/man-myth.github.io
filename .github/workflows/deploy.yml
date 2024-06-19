@@ -22,18 +22,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Debug Secrets
-        run: echo "VITE_EMAIL_TOKEN=${{ secrets.VITE_EMAIL_TOKEN }}" 
-        
       - name: Set up environment variables
         run: |
-          echo "VITE_EMAIL_TOKEN=${{ secrets.VITE_EMAIL_TOKEN }}" >> $GITHUB_ENV
+          echo "VITE_SERVICE_ID=${{ secrets.VITE_SERVICE_ID }}" >> $GITHUB_ENV
+          echo "VITE_TEMPLATE_ID=${{ secrets.VITE_TEMPLATE_ID }}" >> $GITHUB_ENV
+          echo "VITE_PUBLIC_KEY=${{ secrets.VITE_PUBLIC_KEY }}" >> $GITHUB_ENV
 
       - name: Build project
         run: npm run build
-
-      - name: Debug Environment Variables on build
-        run: printenv | grep VITE
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
