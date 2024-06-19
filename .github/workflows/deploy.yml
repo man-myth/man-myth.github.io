@@ -22,8 +22,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-       - name: Debug Secrets
-        run: echo "VITE_EMAIL_TOKEN=${{ secrets.VITE_EMAIL_TOKEN }}"  # Temporarily print secret value to check
+      - name: Debug Secrets
+        run: echo "VITE_EMAIL_TOKEN=${{ secrets.VITE_EMAIL_TOKEN }}" 
         
       - name: Set up environment variables
         run: |
