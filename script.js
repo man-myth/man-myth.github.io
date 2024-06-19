@@ -27,6 +27,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 
 
+
 document.getElementById("loading-container").style.display = "flex";
 
 var topBar = document.getElementById("topBar");
@@ -109,27 +110,43 @@ mediaQuery600.addListener(handleMediaQueryChange600);
 handleMediaQueryChange1140(mediaQuery1140);
 mediaQuery1140.addListener(handleMediaQueryChange1140);
 
-//contact form
-document.querySelector("#contact-form").addEventListener("submit", (e) => {
-  e.preventDefault();
-  Email.send({
-    SecureToken: import.meta.env.VITE_EMAIL_TOKEN,
-    To: "manmeets1100@gmail.com",
-    From: "mnmyt.dev@gmail.com",
-    Subject: "Inquiry from My Website", 
-    Body:
-      "Name: " +
-      e.target.elements.name.value +
-      "<br> Email: " +
-      e.target.elements.email.value +
-      "<br> Message: " +
-      e.target.elements.message.value,
-  }).then((message) => alert("Thank you for connecting with me"));
 
-  e.target.elements.name.value = "";
-  e.target.elements.email.value = "";
-  e.target.elements.message.value = "";
+// Select the form by its ID
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // prevent reload
+
+  var formData = new FormData(this);
+  formData.append('service_id', import.meta.env.VITE_SERVICE_ID);
+  formData.append('template_id', import.meta.env.VITE_TEMPLATE_ID);
+  formData.append('user_id', import.meta.env.VITE_PUBLIC_KEY);
+
+  fetch('https://api.emailjs.com/api/v1.0/email/send-form', {
+      method: 'POST',
+      body: formData,
+      headers: {
+          'Accept': 'application/json'
+      }
+  })
+  .then(function(response) {
+      if (response.ok) {
+          alert('Your mail is sent!');
+      } else {
+          return response.json().then(function(error) {
+              throw new Error(JSON.stringify(error));
+          });
+      }
+  })
+  .catch(function(error) {
+      alert('Oops... ' + error.message);
+  });
+
+  event.target.elements.name.value = "";
+  event.target.elements.email.value = "";
+  event.target.elements.message.value = "";
 });
+
+
+
 
 // three js
 let camera,
