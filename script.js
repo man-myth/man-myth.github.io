@@ -113,10 +113,10 @@ mediaQuery1140.addListener(handleMediaQueryChange1140);
 document.querySelector("#contact-form").addEventListener("submit", (e) => {
   e.preventDefault();
   Email.send({
-    SecureToken: process.env.VITE_EMAIL_TOKEN,
+    SecureToken: import.meta.env.VITE_EMAIL_TOKEN,
     To: "manmeets1100@gmail.com",
     From: "mnmyt.dev@gmail.com",
-    Subject: "Inquiry from My Website",
+    Subject: "Inquiry from My Website", 
     Body:
       "Name: " +
       e.target.elements.name.value +
